@@ -7,9 +7,7 @@ import $ from './Form.module.css';
 interface FormEntry {
   name: string;
   placeholder: string;
-  // TODO: Defined a suitable type for extra props
-  // This type should cover all different of attribute types
-  extraProps: any;
+  extraProps: React.InputHTMLAttributes<HTMLInputElement>; // Define specific type for extraProps
 }
 
 interface FormProps {
@@ -37,7 +35,8 @@ const Form: FunctionComponent<FormProps> = ({
               key={`${name}-${index}`}
               name={name}
               placeholder={placeholder}
-              {...extraProps}
+              {...extraProps} // Spread the extraProps to InputText
+              value={extraProps.value ?? ""} // Ensure value is always a string or empty string
             />
           </div>
         ))}

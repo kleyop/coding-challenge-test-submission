@@ -5,7 +5,7 @@ import $ from "./InputText.module.css";
 interface InputTextProps {
   name: string;
   placeholder: string;
-  value: string;
+  value: string | number | readonly string[] | undefined;  // Accept more types for value
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -23,7 +23,7 @@ const InputText: FunctionComponent<InputTextProps> = ({
       onChange={onChange}
       placeholder={placeholder}
       type="text"
-      value={value}
+      value={value ?? ""}  // Fallback to empty string if value is undefined
     />
   );
 };

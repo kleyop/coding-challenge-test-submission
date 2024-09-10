@@ -20,6 +20,30 @@
   transform: scale(0.95);
 }
 
-/** TODO: Create separate styles for .primary and .secondary variants of this button:
-* - Must use the CSS variables declared in App.css
-*/
+/* Primary variant styles */
+.primary {
+  background-color: var(--color-brand); /* Use the brand color from App.css */
+  color: white;
+}
+
+.primary:hover {
+  background-color: var(--color-brand-dark); /* Add a darker shade for hover state */
+}
+
+.primary:active {
+  background-color: var(--color-brand); /* Keep the original brand color when active */
+}
+
+/* Secondary variant styles */
+.secondary {
+  background-color: var(--color-border); /* Use the border color from App.css */
+  color: var(--color-text); /* Use the text color from App.css */
+}
+
+.secondary:hover {
+  background-color: var(--color-border-dark); /* Add a darker shade for hover state */
+}
+
+.secondary:active {
+  background-color: var(--color-border); /* Keep the original border color when active */
+}

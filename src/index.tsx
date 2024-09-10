@@ -9,6 +9,12 @@ import "./index.css";
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
+// Dynamically inject the Roboto font into the head
+const link = document.createElement('link');
+link.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap';
+link.rel = 'stylesheet';
+document.head.appendChild(link);
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -17,7 +23,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
